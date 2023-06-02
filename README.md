@@ -52,15 +52,57 @@ Y0=s1′s0′I <br>
 
 
 ## Program:
+```
+Developed By: Mirudhula D
+Register No.: 212221230060
+```
+```
+Multiplexer:
+module exp7a(I0,I1,I2,I3,s1,s0,y);
+input I0,I1,I2,I3,s0,s1;
+output y;
+wire p,q,r,s,s1d,s0d;
+not(s1d,s1);
+not(s0d,s0);
+and(p,s1d,s0d,I0);
+and(q,s1d,s0,I1);
+and(r,s1,s0d,I2);
+and(s,s1,s0,I3);
+or(y,p,q,r,s);
+endmodule
+
+Demultiplexer:
+module exp7b(s1,s0,i,y3,y2,y1,y0);
+input s1,s0,i;
+output y3,y2,y1,y0;
+assign y3=(s1&s0&i);
+assign y2=(s1&(~s0)&i);
+assign y1=((~s1)&s0&i);
+assign y0=((~s1)&(~s0)&i);
+endmodule
+```
 
 
 ## RTL Schematic:
 
+## Multiplexer:
 
+![image](https://github.com/MIRUDHULA-DHANARAJ/Mux-Demux/assets/94828147/d8f94bae-ec0e-458c-a11f-77cdc033e6a8)
+
+## Demultiplexer:
+
+![image](https://github.com/MIRUDHULA-DHANARAJ/Mux-Demux/assets/94828147/58a8ce08-936a-4434-837c-bc3d98405eae)
 
 
 ## Timing Diagram:
 
+## Multiplexer:
+
+![image](https://github.com/MIRUDHULA-DHANARAJ/Mux-Demux/assets/94828147/a9ba340a-7f6c-4ff1-9183-80a45f97b662)
+
+## Demultiplexer:
+
+![image](https://github.com/MIRUDHULA-DHANARAJ/Mux-Demux/assets/94828147/8713a8f2-11b9-40c3-b964-8746c1a154ec)
 
 
 ## Result:
